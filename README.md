@@ -5,7 +5,7 @@ For demo purpose only. It wasn't tested and launched. Design patterns that were 
 That's how it should be used:
 ```php
 $processor = (new \TurboParser\TextProcessor\ProcessorFactory())->create($job->getMethods());
-$result = $processor->handle($job->getText());
+$result = null !== $processor ? $processor->handle($job->getText()) : $job->getText();
 ``` 
 
 * amphp/aerys is for async HTTP;

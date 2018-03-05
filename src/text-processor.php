@@ -28,7 +28,7 @@ $router = router()
         // TODO unserialize into Job object
         /** Job $job */
         $processor = (new \TurboParser\TextProcessor\ProcessorFactory())->create($job->getMethods());
-        $result = $processor->handle($job->getText());
+        $result = null !== $processor ? $processor->handle($job->getText()) : $job->getText();
 
         if (Response::NONE == $response->state()) {
             $response->write(''); // to prevent resetting on timeout

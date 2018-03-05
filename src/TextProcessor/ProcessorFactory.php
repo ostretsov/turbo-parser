@@ -25,12 +25,15 @@ class ProcessorFactory
 
     /**
      * @param array $services
-     * @return Processor
+     * @return Processor|null
      * @throws UnknownServiceException
      */
     public function create(array $services = []): Processor
     {
-        $service = array_shift($services);
+        if (null === $service = array_shift($services)) {
+            return null;
+        }
+
         if (!isset($this->services[$service])) {
             throw new UnknownServiceException($service);
         }
