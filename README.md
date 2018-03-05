@@ -1,6 +1,6 @@
 Flash description
 =================
-For demo purpose only. It wasn't tested and launched. Design patterns that were used: __recursive factory & chain of responsibilities__. It was accoumplished in one our.
+For demo purpose only. It wasn't tested or launched. Design patterns that were used: __recursive factory & chain of responsibilities__. It was accoumplished in one hour.
 
 That's how it should be used:
 ```php
